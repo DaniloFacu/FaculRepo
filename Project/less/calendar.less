@@ -1,0 +1,99 @@
+*{margin:0; padding:0;}
+body{
+    background:#ebebeb;
+}
+
+.calendario{
+    background:white;
+    font-size:16px;
+    text-align:center;
+    position:relative;
+    max-width: 950px;
+    margin:20px auto;
+}
+.calendario table{
+    width: 100%;
+    height: 500px;
+    max-width: 950px;
+}
+
+.calendario .mes{
+    display:none;
+}
+.calendario td{
+    padding:6px;
+    color:#02d200;
+}
+.calendario td.evento{
+    background:#069;
+}
+.calendario td.atual{
+    background:#EC2F00;
+    color:white;
+}
+.calendario td a{
+    color:#fff;
+    text-decoration:none;
+    display:block;
+}
+.calendario .mes_title{
+    font-size:15px;
+    height: 58px;
+}
+.calendario .mes_title td{
+    background:#02d200;
+    padding:5px;
+    padding-bottom:6px;
+    color:white;
+}
+.calendario {
+    .dias_title{
+        td{color:#585858 !important;}
+    }
+}
+.calendario #volta, .calendario #vai{
+    padding:0 10px;
+    font-size:25px;
+    text-decoration:none;
+    background:#f1f1f1;
+    line-height:58px;
+    margin:3px;
+    position:absolute;
+    color:#02d200;
+}
+.calendario #volta:hover, .calendario #vai:hover{
+    background:linear-gradient(to bottom, #ccc, #fff 130%);
+}
+.calendario #volta{
+    left:-1px;
+    top:-1px;
+}
+.calendario #vai{
+    right:-1px;
+    top:-1px;
+}
+.blue, .red{
+    float:left;
+    width:15px;
+    height:15px;
+    margin-right:5px;
+}
+.blue{
+    background:#069;
+}
+.red{
+    background:#EC2F00;
+}
+.calendario .legends{
+    float:left;
+    width:100%;
+    margin-top:10px;
+    text-align:left;
+}
+
+.calendario .legends .legenda{
+    float:left;
+    width:30%;
+}
+
+
