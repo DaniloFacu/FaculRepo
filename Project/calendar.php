@@ -15,6 +15,7 @@
     <title>Genial Calendar</title>
     <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/fonts/quicksand/quicksand.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
 </head>
 <body>
     <div class="container">
@@ -29,10 +30,39 @@
                     <span class="legenda"><span class="blue"></span> Eventos</span>
                     <span class="legenda"><span class="red"></span> Hoje</span>
                 </div>
+                <button id='alterar' style="width: 200px;height: 200px;">Alterar</button>
+                <div>
+                    <p id='teste'></p>
+                </div>
             </div>
         <?php include('footer.php'); ?>
     </div>    
-    <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/functions.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            
+            $('#alterar').click(function(event) {
+                attEvents();
+            });
+
+            function attEvents(){
+                $.ajax({
+                    url: "eventsjson.php",
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(response) {
+                        for(var i=0;response.length>i;i++){
+                            //Adicionando registros retornados na tabela
+                                $('#teste').append(response[i].titulo);
+                                    'titulo': response[i].titulo,
+                                    'data': response[i].data,
+                                    'link': response[i].link 
+                            }
+                    }
+                });
+            }
+
+        });
+    </script>
 </body>
 </html>

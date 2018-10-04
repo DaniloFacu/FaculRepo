@@ -17,8 +17,7 @@ CREATE TABLE IF NOT EXISTS `eventos` (
 -- Extraindo dados da tabela `eventos`
 --
 INSERT INTO `eventos` (`id`, `titulo`, `data`, `link`) VALUES
-(1, 'Evento exemplo 1', '2016-05-14 16:59:00', 'http://downsmaster.com'),
-(2, 'Evento numero dois', '2016-05-17 23:59:00', 'http://google.com.br');
+(1, 'Evento exemplo 1', CURRENT_TIMESTAMP(), 'http://downsmaster.com');
 
 
 ---------------------
