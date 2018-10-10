@@ -1,12 +1,12 @@
 <?php
     include 'conexao.php';
     include 'calendario.php';
-    $info = array(
-        'tabela' => 'eventos',
-        'data' => 'data',
-        'titulo' => 'titulo',
-        'link' => 'link'
-    );
+    // $info = array(
+    //     'tabela' => 'eventos',
+    //     'data' => 'data',
+    //     'titulo' => 'titulo',
+    //     'link' => 'link'
+    // );
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,17 +51,15 @@
                     type: 'GET',
                     dataType: 'json',
                     success: function(response) {
-                        for(var i=0;response.length>i;i++){
-                            //Adicionando registros retornados na tabela
-                                $('#teste').append(response[i].titulo);
-                                    'titulo': response[i].titulo,
-                                    'data': response[i].data,
-                                    'link': response[i].link 
-                            }
+                        $.ajax({
+                            url: '/path/to/file',
+                            type: 'default GET (Other values: POST)',
+                            dataType: 'json',
+                            data: {titulo: 'value1'}
+                        })
                     }
-                });
-            }
-
+                })
+            }    
         });
     </script>
 </body>

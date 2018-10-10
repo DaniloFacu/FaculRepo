@@ -12,9 +12,9 @@
 		<div id='main' id='register'>
 			<form name='frmSignup' method="POST" action="checkSignup.php">
 				<label>Login:</label>
-				<input type="text" name="username" id="username"><br>
+				<input type="text" name="username" id="username" required><br>
 				<label>Senha:</label>
-				<input type="password" name="password" id="password"><br>
+				<input type="password" name="password" id="password" required><br>
 				<input type="submit" value="Cadastrar" id="cadastrar" name="cadastrar">
 			</form>
 		</div>
@@ -22,17 +22,3 @@
 	</div>
 </body>
 </html>
-<?php
-$servidor = "localhost";
-$usuario = "root";
-$banco = "downsmaster";
-$senha = "";
-//Não Alterar abaixo:
-$conmysql = mysqli_connect($servidor,$usuario,$senha);
-//$db = mysql_select_db($banco, $conmysql);
-if ($conmysql){
-echo "Parabens!! A conexão ao banco de dados ocorreu normalmente!";
-} else {
-echo "Nao foi possivel conectar ao banco MYSQL";
-}
-?>
